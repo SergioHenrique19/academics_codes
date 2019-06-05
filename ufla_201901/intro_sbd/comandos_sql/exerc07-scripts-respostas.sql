@@ -13,3 +13,6 @@ SELECT nomeFunc, salario FROM Funcionario WHERE dataNasc between "1960-01-01" an
 SELECT nomeDep FROM Dependente join Funcionario on Funcionario.idFunc = Dependente.idFunc WHERE Funcionario.nomeFunc = 'João B. Silva';
 
 /* [4] Selecione o nome dos projetos que o funcionário de nome ‘Frank T. Santos’ trabalha */
+SELECT nomeProj FROM Projeto natural join Trabalha join Funcionario on Funcionario.idFunc = Trabalha.idFunc WHERE Funcionario.nomeFunc = 'Frank T. Santos';
+
+/* [5] Selecione o nome dos funcionários que trabalham em projetos controlados pelo departamento de nome ‘ Construção’ */
