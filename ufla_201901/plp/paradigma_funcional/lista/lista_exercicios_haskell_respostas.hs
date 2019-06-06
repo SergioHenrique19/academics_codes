@@ -20,7 +20,7 @@ maiorMedia a b c
 -- questao 3 [fim]
 
 -- questao 4 [inicio]
-mmc::Int->Int->Int
+mmc::Int -> Int -> Int
 mmc a b
     | b == a = a
     | otherwise = div (a * b) (mdc a b)
@@ -28,6 +28,10 @@ mmc a b
 
 -- questao 5 [inicio]
 mmcLista :: [Int] -> Int
+mmcLista [] = error "Lista vazia"
+mmcLista (h:t)
+    | t == [] = h
+    | otherwise = mmc h (mmcLista t)
 -- questao 5 [fim]
 
 -- questao 6 [inicio]
@@ -41,10 +45,22 @@ mdc a b
 
 -- questao 7 [inicio]
 mdcLista :: [Int] -> Int
+mdcLista (h:t)
+    | t == [] = h
+    | otherwise = mdcLista (mdcLista_aux h t)
+
+mdcLista_aux :: Int -> [Int] -> [Int]
+mdcLista_aux x [] = []
+mdcLista_aux x (h:t)
+    | mod x h == 0 = (h:t)
+    | otherwise = mdcLista_aux h ((mod x h):t)
 -- questao 7 [fim]
 
 -- questao 8 [inicio]
 -- questao 8 [fim]
 
--- questao 5 [inicio]
--- questao 5 [fim]
+-- questao 9 [inicio]
+-- questao 9 [fim]
+
+-- questao sh [inicio]
+-- questao sh [fim]
