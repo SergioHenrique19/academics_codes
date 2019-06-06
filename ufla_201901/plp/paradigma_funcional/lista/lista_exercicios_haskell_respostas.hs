@@ -27,6 +27,7 @@ mmc a b
 -- questao 4 [fim]
 
 -- questao 5 [inicio]
+mmcLista :: [Int] -> Int
 -- questao 5 [fim]
 
 -- questao 6 [inicio]
@@ -40,8 +41,6 @@ mdc a b
 
 -- questao 7 [inicio]
 mdcLista :: [Int] -> Int
-import Data.List
-mdcLista a = sort a
 -- questao 7 [fim]
 
 -- questao 8 [inicio]
