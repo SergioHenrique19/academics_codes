@@ -1,3 +1,6 @@
+{- GCC198 (2019/1) - Paradigma Funcional - Respostas da lista de exercicios
+   Sérgio H. M. Garcia -}
+
 -- questao 1 [inicio]
 baskara :: Float -> Float -> Float -> (Float, Float)
 baskara a b c =
@@ -17,6 +20,8 @@ maiorMedia a b c
 -- questao 2 [fim]
 
 -- questao 3 [inicio]
+somaIntervalo :: Int -> Int -> (Int, Int)
+somaIntervalo a b = ((sum [x | x <- [a .. b]]), (sum [x | x <- [(a+1) .. (b-1)]]))
 -- questao 3 [fim]
 
 -- questao 4 [inicio]
@@ -57,10 +62,52 @@ mdcLista_aux x (h:t)
 -- questao 7 [fim]
 
 -- questao 8 [inicio]
+produtoIntervalo :: Int -> Int -> Int
+produtoIntervalo a b = product [x | x <- [a .. b]]
 -- questao 8 [fim]
 
 -- questao 9 [inicio]
+raizInteira :: Int -> Int
+raizInteira n = maximum [x|x <- [1 .. n], x*x <= n]
 -- questao 9 [fim]
 
--- questao sh [inicio]
--- questao sh [fim]
+-- questao 10 [inicio]
+unirListas :: [Int] -> [Int] -> [Int]
+unirListas (h:t) b
+    | t == [] = h : b
+    | otherwise = h : unirListas t b
+-- questao 10 [fim]
+
+-- questao 11 [inicio]
+removerEspacos :: String -> String
+removerEspacos [] = ""
+removerEspacos (h:t)
+    | h == ' ' = h : removerEspacos(removerEspacos_aux t)
+    | otherwise = h : removerEspacos t
+
+removerEspacos_aux :: String -> String
+removerEspacos_aux (h:t)
+    | h == ' ' = removerEspacos_aux t
+    | otherwise = h:t
+-- questao 11 [fim]
+
+-- questao 12 [inicio]
+-- questao 12 [fim]
+
+-- questao 13 [inicio]
+-- questao 13 [fim]
+
+-- questao 14 [inicio]
+-- questao 14 [fim]
+
+-- questao 15 [inicio]
+-- questao 15 [fim]
+
+-- questao 16 [inicio]
+-- questao 16 [fim]
+
+-- questao 17 [inicio]
+-- questao 17 [fim]
+
+-- questao 18 [inicio]
+-- questao 18 [fim]
