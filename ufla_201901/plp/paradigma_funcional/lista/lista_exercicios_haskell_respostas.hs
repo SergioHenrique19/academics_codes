@@ -172,6 +172,25 @@ pess x
     |x==9 = ("Daniel", 75, 1.74, 'M')
     |x==10 = ("Jocileide", 21, 1.69,'F')
     |otherwise = ("Acabou!",0, 0.0, 'x')
+
+maiorelemento xs = foldr (\ (x,y) acc -> if (x == maximum xs) then (x,y) else acc) (0, head xs) (zip xs [1..])
+
+-- encontra a idade dentro de uma tupla de pessoa
+q17_a_aux1 (_,idade,_,_) = idade
+-- a função maiorelemento retorna uma tupla de (elemento, indice) portanto devemos extrair o indice, que é a resposta da questão
+q17_a_aux2 (_, index) = index
+-- função principal da questão, busca a tupla do maior elemento da lista depois extrai apenas seu indice
+q17_a = q17_a_aux2 (maiorelemento [q17_a_aux1 pessoa| pessoa <- pessoas]) where pessoas = [pess x | x <- [1..10]]
+
+-- lista a idade de todas as pessoas
+q17_b_aux1 = [q17_a_aux1 pessoa| pessoa <- pessoas] where pessoas = [pess x | x <- [1..10]]
+-- calcula a media desta lista
+q17_b =  fromIntegral (sum q17_b_aux1) / fromIntegral (length q17_b_aux1)
+
+-- encontra o sexo dentro de uma tupla de pessoa
+q17_c_aux1 (_,_,_,sexo) = sexo
+-- aplica um filtro dentro de uma lista de pessoas pra remover os elementos que não são masculinos e maiores de 25 anos, após isso contar os resultados
+q17_c = length [pessoa | pessoa <- pessoas, (q17_c_aux1 pessoa == 'M') && (q17_a_aux1 pessoa > 25) ] where pessoas = [pess x | x <- [1..10]]
 -- questao 17 [fim]
 
 -- questao 18 [inicio]
