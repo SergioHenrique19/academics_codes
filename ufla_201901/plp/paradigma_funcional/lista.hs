@@ -66,3 +66,35 @@ zip :: [a] -> [b] -> [(a,b)] -}
 inverter :: [a] -> [a]
 inverter [] = []
 inverter (a:b) = (inverter b)++[a]
+
+-- listas
+l1 :: [Int]
+l1 = take 10 (cycle [1,2,3])
+
+l2 :: [Int]
+l2 = take 10 (repeat 5)
+
+l3 :: [Int]
+l3 = [2,4..20]  
+
+l4 :: [Int]
+l4 = [3,6..20]  
+
+l5 :: [Float]
+l5 = [0.1, 0.3 .. 1]
+
+l6 :: String
+l6 = ['A'..'Z']
+
+list1 = [1,2,3]
+list2 = [2 * a | a <- list1]
+list3 = [a | a <- list1, even a]
+
+-- tuplas
+w :: (Integer, [Char])
+w = ( let a = 100; b = 200; c = 300 in a*b*c, 
+      let foo="Hey "; bar = "there! ";  fufu = 3.8 in 
+        foo ++ bar ++ (show fufu) )
+
+gt1 :: [(Int, Char)]
+gt1 = zip [1..] ['A'..'Z']
