@@ -68,7 +68,7 @@ produtoIntervalo a b = product [x | x <- [a .. b]]
 
 -- questao 9 [inicio]
 raizInteira :: Int -> Int
-raizInteira n = maximum [x|x <- [1 .. n], x*x <= n]
+raizInteira n = maximum [x | x <- [1 .. n], x*x <= n]
 -- questao 9 [fim]
 
 -- questao 10 [inicio]
@@ -92,22 +92,89 @@ removerEspacos_aux (h:t)
 -- questao 11 [fim]
 
 -- questao 12 [inicio]
+novaLista:: [Float] -> [Float]
+novaLista a 
+    | a == [] = error "Lista vazia"
+    | otherwise = [x | x <- a, x < media]
+    where media = sum a / (fromIntegral (length a))
 -- questao 12 [fim]
 
 -- questao 13 [inicio]
+type Nome = String
+type Curso = String
+type Periodo = Int
+type Nota = Float
+type Aluno = (Nome, Curso, Periodo, Nota)
+type Disciplina = [Aluno]
+
+alunos :: Int -> Aluno
+alunos matricula
+    | matricula == 1 = ("Rodrigo", "S.Inf.", 3, 6.0)
+    | matricula == 2 = ("Joao", "Eng.Comp.", 5, 5.0)
+    | matricula == 3 = ("Lucas", "C.Comp.", 8, 3.5)
+    | matricula == 4 = ("Ana", "C.Comp.", 5, 8.0)
+    | matricula == 5 = ("Maria", "C.Comp.", 7, 9.5)
+    | matricula == 6 = ("Paulo", "C.Comp", 6, 6.0)
+    | matricula == 7 = ("Jose", "S.Inf.", 8, 7.0)
+    | matricula == 8 = ("Eduarda", "C.Comp.", 4, 1.0)
+    | matricula == 9 = ("Carla", "Eng.Comp.", 6, 6.5)
+    | matricula == 10 = ("Luiz", "C.Comp.", 7, 5.7)
+    | matricula == 11 = ("Acabou", "XXX", 4, 8.0)
+
+menorNota :: Aluno -> Float -> Int -> String
+menorNota (a,_,_,n) j k
+    | a == "Acabou" = nome (alunos 1) j 1
+    | otherwise = menorNota (alunos (k + 1)) menor (k + 1)
+    where menor | n < j = n
+                | otherwise = j
+
+nome :: Aluno -> Float -> Int -> Nome
+nome (a,_,_,n) j k
+    | n == j = a
+    | otherwise = nome (alunos (k + 1)) j (k + 1)
+
+reprovados :: Aluno -> Int -> Int -> Int
+reprovados (a,_,_,n) j k
+    | a == "Acabou" = j
+    | otherwise = reprovados (alunos (k + 1)) itera (k + 1)
+    where itera | n < 6.0 = j + 1
+                | otherwise = j
 -- questao 13 [fim]
 
 -- questao 14 [inicio]
+zipar3:: [Int] -> [Int] -> [Int] -> [(Int, Int , Int)]
+zipar3 [] _ _ = []
+zipar3 _ [] _ = []
+zipar3 _ _ [] = []
+zipar3 (x:xs) (y:ys) (z:zs) = [ x | x <- (x, y, z) : zipar3 xs ys zs]
 -- questao 14 [fim]
 
--- questao 15 [inicio]
--- questao 15 [fim]
-
 -- questao 16 [inicio]
+anoBissexto :: Int -> Bool
+anoBissexto n
+    | mod n 4 == 0 = True
+    | otherwise = False
 -- questao 16 [fim]
 
 -- questao 17 [inicio]
+type Pessoa = (String, Int, Float,Char)
+
+pess :: Int->Pessoa
+pess x
+    |x==1 = ("Rosa", 27, 1.66,'F')
+    |x==2 = ("João", 26, 1.85,'M')
+    |x==3 = ("Maria", 67, 1.55,'F')
+    |x==4 = ("Jose", 48, 1.78, 'M')
+    |x==5 = ("Paulo", 24, 1.93, 'M')
+    |x==6 = ("Clara", 38, 1.70,'F')
+    |x==7 = ("Bob", 12, 1.45, 'M')
+    |x==8 = ("Rosana", 31, 1.58,'F')
+    |x==9 = ("Daniel", 75, 1.74, 'M')
+    |x==10 = ("Jocileide", 21, 1.69,'F')
+    |otherwise = ("Acabou!",0, 0.0, 'x')
 -- questao 17 [fim]
 
 -- questao 18 [inicio]
+somaImpares :: Int -> Int
+somaImpares n = sum [x | x <- [1..n], mod x 2 /= 0]
 -- questao 18 [fim]
