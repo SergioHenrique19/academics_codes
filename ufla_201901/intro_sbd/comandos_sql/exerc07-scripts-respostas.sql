@@ -7,7 +7,8 @@ use Empresa;
 SELECT endereco, salario FROM Funcionario
 WHERE nomeFunc='Luciana S. Santos';
 
-/* [2] Selecione o nome e o salário dos funcionários que nasceram  entre os anos de 1960 e 1969, inclusive, do sexo feminino e que ganham menos de 1000 */
+/* [2] Selecione o nome e o salário dos funcionários que nasceram  entre os anos de 1960 e 1969, 
+	inclusive, do sexo feminino e que ganham menos de 1000 */
 SELECT nomeFunc, salario FROM Funcionario
 WHERE dataNasc BETWEEN "1960-01-01" AND "1969-12-31" AND sexo = 'F' AND salario < 1000;
 
@@ -19,7 +20,8 @@ WHERE Funcionario.nomeFunc = 'João B. Silva';
 SELECT nomeProj FROM Projeto NATURAL JOIN Trabalha JOIN Funcionario ON Funcionario.idFunc = Trabalha.idFunc
 WHERE Funcionario.nomeFunc = 'Frank T. Santos';
 
-/* [5] Selecione o nome dos funcionários que trabalham em projetos controlados pelo departamento de nome ‘ Construção’ */
+/* [5] Selecione o nome dos funcionários que trabalham em projetos controlados pelo
+	departamento de nome ‘ Construção’ */
 SELECT nomeFunc FROM Funcionario F, Trabalha T, Projeto P, Departamento D
 WHERE nomeDepto = 'Construção' AND D.idDepto=P.idDepto AND P.idProj=T.idProj AND T.idFunc=F.idFunc;
 
@@ -31,7 +33,8 @@ WHERE idSuperv = (SELECT idFunc FROM Funcionario WHERE nomeFunc = 'Frank T. Sant
 SELECT nomeFunc, endereco FROM Funcionario
 WHERE idFunc NOT IN (SELECT idFunc FROM Dependente);
 
-/* [8] Selecione o nome dos funcionários que trabalham no departamento de nome ‘Pesquisa’ ou que trabalham no projeto de nome ‘N. Benefícios’ */
+/* [8] Selecione o nome dos funcionários que trabalham no departamento de nome ‘Pesquisa’ ou
+	que trabalham no projeto de nome ‘N. Benefícios’ */
 SELECT nomeFunc FROM Funcionario NATURAL JOIN Departamento WHERE nomeDepto = 'Pesquisa'
 UNION
 SELECT nomeFunc FROM Funcionario JOIN 
