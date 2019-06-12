@@ -40,3 +40,21 @@ UNION
 SELECT nomeFunc FROM Funcionario JOIN 
 (Trabalha NATURAL JOIN Projeto) ON Funcionario.idFunc = Trabalha.idFunc
 WHERE Projeto.nomeProj = 'N. Benefícios';
+
+/*Questão 21 */
+DELIMITER //
+CREATE PROCEDURE atualizaSalario(IN idDeptoA INT, acres DECIMAL(8,2))	
+BEGIN 
+    UPDATE Funcionario 
+    SET salario = salario * acres
+    WHERE idDepto = idDeptoA;
+END //
+DELIMITER ;
+
+/*Questão 22 */
+DELIMITER //
+CREATE PROCEDURE adicionaFuncinProj(IN idFuncA INT, IN idProjA INT, IN nHoras DECIMAL(6,1))
+BEGIN
+    INSERT INTO Trabalha VALUES(idFuncA, idProjA, nHoras);
+END //
+DELIMITER ;
