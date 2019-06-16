@@ -1,3 +1,7 @@
+/* Trabalho Final de PLP (2019/01)
+ * Este codigo contem todas as operacoes possiveis das classes em models.
+ * Desenvolvido por: Gabriel Peruzza, João Salgado, Otavio Lima e Sérgio Garcia */
+
 package controllers;
 
 import java.text.ParseException;
@@ -16,7 +20,7 @@ public class Controlador {
 	protected static List<IngressoInteiro> listaIngInts = new ArrayList<IngressoInteiro>();
 	protected static List<IngressoMeio> listaIngMeios = new ArrayList<IngressoMeio>();
 	
-	// Metodo para cadastrar um filme na lista e no arquivo
+	// Metodo para cadastrar um filme na lista
 	public static void cadastrarFilme(int idFilme, String titulo, String datah, int duracao, String classific) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		ClassIndic classIndic = null;
@@ -66,7 +70,7 @@ public class Controlador {
 		return null;
 	}
 	
-	// Metodo para cadastrar uma sessao na lista e no arquivo
+	// Metodo para cadastrar uma sessao na lista
 	public static void cadastrarSessao(int idSessao, int hora, String filmeh, String idiomah, String telah) {
 		Filme filme = buscarFilme(filmeh);
 		Idioma idioma = null;
@@ -198,7 +202,7 @@ public class Controlador {
 		listaIngInts.add(ingInt);
 	}
 	
-	// Metodo para cadastrar ingresso meio TODO
+	// Metodo para cadastrar ingresso meio
 	public static void cadastrarIngrMeio(int idIngresso, String datah, int idSes, int poltrona, String carteirah) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		Date dataVenda = sdf.parse(datah);

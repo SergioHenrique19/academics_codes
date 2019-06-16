@@ -1,3 +1,7 @@
+/* Trabalho Final de PLP (2019/01)
+ * Este codigo representa a estrutura de um filme e seus atributos.
+ * Desenvolvido por: Gabriel Peruzza, João Salgado, Otavio Lima e Sérgio Garcia */
+
 package models;
 
 import java.text.SimpleDateFormat;

@@ -1,3 +1,7 @@
+/* Trabalho Final de PLP (2019/01)
+ * Este codigo representa a estrutura de uma sessao e seus atributos.
+ * Desenvolvido por: Gabriel Peruzza, João Salgado, Otavio Lima e Sérgio Garcia */
+
 package models;
 
 import models.Idioma;
@@ -9,7 +13,7 @@ public class Sessao {
 	private int hora;
 	private Filme filme;   // Atributo que referencia um (titulo) filme
 	private Idioma idioma;   // dublado ou legendado
-	private Tela tela;   // Onde "true = 3D" e "false = 2D"
+	private Tela tela;   // 2D ou 3D
 	
 	// Construtor sem parametro
 	public Sessao(){}
