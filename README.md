@@ -1,2 +1,4 @@
 # academics_codes
-Códigos de exemplo aplicados em algumas disciplinas
+Códigos desenvolvidos em trabalhos, projetos ou listas durante minha graduação em Ciência da Computação na UFLA (2018/1).
+
+Para facilitar a visualização, foi organizado em semestres e disciplinas.
