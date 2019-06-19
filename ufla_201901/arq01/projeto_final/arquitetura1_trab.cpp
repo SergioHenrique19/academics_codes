@@ -1,9 +1,11 @@
 /* TRABALHO FINAL GCC117 - ARQUITETURA DE COMPUTADORES 1
     PROFESSOR: Andre Vital Saude
-    GRUPO: Fábio
-           Kaio
-           Otávio
-           Sérgio
+    GRUPO: Fábio Junio Rolin de Oliveira
+           Kaio Vinícius de Morais Silva
+           Otávio de Lima Soares
+           Sérgio Henrique Menta Garcia
+
+    FONTE: https://github.com/SergioHenrique19/academics_codes/tree/master/ufla_201901/arq01/projeto_final
 */
 
 #include <iostream>
