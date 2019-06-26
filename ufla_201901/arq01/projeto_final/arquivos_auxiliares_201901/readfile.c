@@ -10,12 +10,15 @@ unsigned int memory[MAX_FILE_SIZE / 4];
 unsigned short fileSize;
  	
 // read binary file into memory
-int loadBinary(const char *filename) {
+void loadBinary(const char *filename) {
     //Open the file for reading in binary mode
     FILE *fIn = fopen(filename, "rb");
     long position;
-
-    if (fIn != NULL) {
+	
+    if (fIn == NULL) {
+	  printf("File not found: %s\n", filename);
+	  exit(1);
+	} else {
       //Go to the end of the file
       const int fseek_end_value = fseek(fIn, 0, SEEK_END);
       if (fseek_end_value != -1) {
@@ -80,11 +83,17 @@ void writeFileAsText (const char *basename) {
 
 int main(int argc, char *argv[]) {
 
-    char *filename = "summation.o";
+    char *filename;
+	
+	printf("Usage: readfile [filename=summation.o].\n");
+	if (argc < 2) {
+		filename = "summation.o";
+	} else {
+		filename = argv[1];
+	}
+	printf("Transforming file %s.\n", filename);
 
 	loadBinary(filename);
-
-
 	writeFileAsText(filename);
 
 	return 0;
