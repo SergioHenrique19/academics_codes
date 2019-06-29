@@ -23,3 +23,39 @@ rota(X,Y,C) :- ligado(X,Y,C).
 
 rota(X,Y,C) :- ligado(X,Z,C1), 
                rota(Z,Y,C2), C is (C1 + C2).
+
+/* calculando maior valor */
+max([X],X).
+max([X,Y|Cauda],Max) :- X >= Y, !, max([X|Cauda],Max).
+max([X,Y|Cauda],Max) :- max([Y|Cauda],Max).
+
+/* uso do fail */
+humano(socrates).
+humano(aristoteles).
+humano(platao).
+humano(tales).
+humano(hermanoteu).
+
+deus(apolo).
+deus(zeus).
+deus(baco).
+
+mortal(X) :- humano(X).
+mortal_report :- 
+   write('Mortais  conhecidos:'),
+   nl,
+   nl,
+   mortal(X), 
+   write(X), 
+   nl, 
+   fail.
+
+mortal_report. % ou: mortal_report :- true.
+
+/* teste -- erro */
+soma([], 0).
+soma([X|T], R) :- soma(T, S), S is (R - X).
+
+/* teste -- funciona */
+soma([], 0).
+soma([X|T], R) :- soma(T, A) R is (A + X).
