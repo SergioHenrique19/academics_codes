@@ -53,9 +53,13 @@ mortal_report :-
 mortal_report. % ou: mortal_report :- true.
 
 /* teste -- erro */
-soma([], 0).
-soma([X|T], R) :- soma(T, S), S is (R - X).
+% soma([], 0).
+% soma([X|T], R) :- soma(T, S), S is (R - X).
 
 /* teste -- funciona */
 soma([], 0).
-soma([X|T], R) :- soma(T, A) R is (A + X).
+soma([X|T], R) :- soma(T, A), R is (A + X).
+
+/* produto da lista */
+produto([X], X) :- !.
+produto([H|T],R) :- produto(T,A), R is (A*H).
