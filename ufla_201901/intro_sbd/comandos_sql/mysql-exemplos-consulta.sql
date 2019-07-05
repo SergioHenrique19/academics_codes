@@ -74,11 +74,11 @@ where nomeDepto='Pesquisa' and D.idDepto=P.idDepto and
 select nomeFunc
 from Funcionario natural join Departamento
 where nomeDepto='Pesquisa'
-intersect
-select nomeFunc
+in -- intersect
+(select nomeFunc
 from Funcionario F, Trabalha T, Projeto P, Departamento D
 where nomeDepto='Pesquisa' and D.idDepto=P.idDepto and 
-      P.idProj=T.idProj and T.idFunc=F.idFunc;
+      P.idProj=T.idProj and T.idFunc=F.idFunc);
 
 -- lista o ID dos funcionários que não têm dependentes
 -- MINUS não está implementado no MySQL, mas é padrão SQL

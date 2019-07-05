@@ -1,8 +1,6 @@
 /* Usuários e permissões de acesso */
 
-/* 
-Criação de Usuários 
-*/
+/* Criação de Usuários */
 
 /*
 CREATE USER especificação_de_usuario [, especificação_de_usuario] ...
@@ -16,19 +14,13 @@ user:
 
 CREATE USER 'denilson'@'localhost' IDENTIFIED BY '0192';
 
-/* 
-Exclusão de usuários
-*/
+/* Exclusão de usuários */
 
 DROP USER 'denilson'@'localhost';
 
-/*
-Permissões de acesso
-*/
+/* Permissões de acesso */
 
-/* 
-Concessão de permissão
-*/
+/* Concessão de permissão */
 /*
 GRANT
     priv_type [(column_list)]
@@ -78,10 +70,7 @@ GRANT SELECT, INSERT ON Empresa.Departamento TO 'denilson'@'localhost';
 -- Concede ao usuário 'denilson' em 'localhost' o direito de alterar a coluna 'NomeDepto' na table Departamento
 GRANT UPDATE (nomeDepto) ON Empresa.Departamento TO 'denilson'@'localhost';
 
-
-/*
-Revogação de permissão
-*/
+/* Revogação de permissão */
 /*
 REVOKE
     priv_type [(column_list)]
@@ -99,5 +88,5 @@ REVOKE UPDATE (nomeDepto) ON Empresa.Departamento FROM 'denilson'@'localhost';
 -- Revoga, do usuário 'denilson' em 'localhost', todos os privilégios sobre tabela Funcionario
 REVOKE ALL ON Empresa.Funcionario FROM 'denilson'@'localhost';
 
-/* Mais informações: http://dev.mysql.com/doc/refman/5.0/en/grant.html#grant-privileges
+-- Mais informações: http://dev.mysql.com/doc/refman/5.0/en/grant.html#grant-privileges
 

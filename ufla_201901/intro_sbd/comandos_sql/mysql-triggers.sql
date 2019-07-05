@@ -151,11 +151,11 @@ Teste o trigger inserindo novos funcionários na tabela
 
 SELECT * FROM Funcionario;
 
-INSERT INTO Funcionario VALUES (10, 'Osvaldo Magalhães', 'R. Francisco Sales, 105', '1980-05-10', 'M', 3000.00, 4, 1);
+INSERT INTO Funcionario VALUES (12, 'Osvaldo Magalhães', 'R. Francisco Sales, 105', '1980-05-10', 'M', 3000.00, 4, 1);
 
 SELECT * FROM Funcionario;
 
-INSERT INTO Funcionario VALUES (10, 'Osvaldo Magalhães', 'R. Francisco Sales, 105', '1980-05-10', 'M', 1000.00, 4, 1);
+INSERT INTO Funcionario VALUES (12, 'Osvaldo Magalhães', 'R. Francisco Sales, 105', '1980-05-10', 'M', 1000.00, 4, 1);
 
 SELECT * FROM Funcionario;
 
@@ -189,16 +189,16 @@ Teste o trigger inserindo novos funcionários
 */
 
 INSERT INTO Funcionario (idFunc, nomeFunc, endereco, dataNasc, sexo, salario, idSuperv, idDepto)
-VALUES (11, 'Manuel Silva', 'R. Francisco Sales, 105', '1980-05-10', '1', 2000.00, 4, 2);	
+VALUES (13, 'Manuel Silva', 'R. Francisco Sales, 105', '1980-05-10', '1', 2000.00, 4, 2);	
 
 INSERT INTO Funcionario (idFunc, nomeFunc, endereco, dataNasc, sexo, salario, idSuperv, idDepto)
-VALUES (12, 'Joaquim Silva', 'R. Francisco Sales, 105', '1981-05-10', 'M', 2000.00, 4, 2);	
+VALUES (14, 'Joaquim Silva', 'R. Francisco Sales, 105', '1981-05-10', 'M', 2000.00, 4, 2);	
 
 INSERT INTO Funcionario (idFunc, nomeFunc, endereco, dataNasc, sexo, salario, idSuperv, idDepto)
-VALUES (13, 'Marina Silva', 'R. Francisco Sales, 105', '1982-05-10', 'F', 2000.00, 4, 2);	
+VALUES (15, 'Marina Silva', 'R. Francisco Sales, 105', '1982-05-10', 'F', 2000.00, 4, 2);	
 
 INSERT INTO Funcionario (idFunc, nomeFunc, endereco, dataNasc, sexo, salario, idSuperv, idDepto)
-VALUES (14, 'Jozinha Silva', 'R. Francisco Sales, 105', '1983-05-10', '3', 2000.00, 4, 2);	
+VALUES (16, 'Jozinha Silva', 'R. Francisco Sales, 105', '1983-05-10', '3', 2000.00, 4, 2);	
 
 SELECT * FROM Funcionario;
 
