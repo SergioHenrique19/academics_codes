@@ -135,11 +135,10 @@ int main(int argc, char const *argv[])
   //  M := |      |
   //       | C  D |
   //       └      ┘
-  // Tendo em vista que A é invertível, denotamos o complemento da seguinte
-  // forma:
+  // tendo em vista que A é invertível, denotamos o complemento deste modo:
   //                  -1
   //  M/A := D - C . A   . B
-  // Por fim, para obter o determinante de M, aplicamos a seguinte propriedade:
+  // por fim, para obter o determinante de M, aplicamos a seguinte propriedade:
   //  det(M) = det(A) . det(M/A)
 
   __m256d A = _mm256_setr_pd(matriz[0][0], matriz[0][1], matriz[1][0], matriz[1][1]);
