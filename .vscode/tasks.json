@@ -5,6 +5,7 @@
       "label": "C/C++: g++ arquivo de build ativo",
       "command": "/usr/bin/g++",
       "args": [
+        "-march=native",
         "-fdiagnostics-color=always",
         "-g",
         "${file}",
