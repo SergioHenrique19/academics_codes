@@ -1,6 +1,7 @@
-#include <immintrin.h>
-#include <stdio.h>
 #include <iostream>
+#include <immintrin.h>
+
+using namespace std;
 
 int main()
 {
@@ -32,13 +33,13 @@ int main()
 
     // Por fim, exibimos os resultados.
     float *f = (float *)&resultado_float;
-    std::cout << "resultado float: " << f[0] << ", " << f[1] << ", " << f[2] << ", " << f[3] << ", " << f[4] << ", " << f[5] << ", " << f[6] << ", " << f[7] << std::endl;
+    cout << "resultado float: " << f[0] << ", " << f[1] << ", " << f[2] << ", " << f[3] << ", " << f[4] << ", " << f[5] << ", " << f[6] << ", " << f[7] << endl;
 
     double *d = (double *)&resultado_double;
-    std::cout << "resultado double: " << d[0] << ", " << d[1] << ", " << d[2] << ", " << d[3] << std::endl;
+    cout << "resultado double: " << d[0] << ", " << d[1] << ", " << d[2] << ", " << d[3] << endl;
 
     int *i = (int *)&resultado_soma;
-    std::cout << "resultado int: " << i[0] << ", " << i[1] << ", " << i[2] << ", " << i[3] << ", " << i[4] << ", " << i[5] << ", " << i[6] << ", " << i[7] << std::endl;
+    cout << "resultado int: " << i[0] << ", " << i[1] << ", " << i[2] << ", " << i[3] << ", " << i[4] << ", " << i[5] << ", " << i[6] << ", " << i[7] << endl;
 
     return 0;
 }
